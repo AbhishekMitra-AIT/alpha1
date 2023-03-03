@@ -1,26 +1,18 @@
-This file show how to create a sample login page using 
-python, django, installing apache2, phpmyadmin and mysql in
-the laptop and making it locahost.
+This file show how to create a sample login page using python, django, installing apache2, phpmyadmin and mysql in the laptop and making it localhost.
 
-step1: login with username and password if not then create a signup.
-step2: for signup ask the user - first name, lastname, emailid, username(not be duplicated with existing user in db) and password(to have necessary security level)
-step3: verify email id of user by sending a verification link to the user's email and asking them to click and verify the link
-step4: after email verification ask the user to login user username and password
-step5: bring the user to dashboard(user details)
+Rough flowchart for what is to be acomplished - 
+step1: login with email, if new user then create a signup else login to dashboard.
+step2: for signup ask the user - first name, lastname, email. Once success route the user to login page.
+step3: verify email id of user by comparing the email in db and route to dashboard.
+step4: inside dashboard, the user can record an audio by clicking record audio button. Once recording is done, display the recorded file in the same dashboard
+step5: inside dashboard, the user can play an audio using play audio button
 step6: logout
 
+Used below reference for installing phpmyadmin in the laptop root
 reference: https://www.youtube.com/watch?v=VpygRfO8w9k
 
-queries
-1) error is coming inside def form_view(), # activity.objects.create(activity = id)
-2) duplicate entry error is not showing in home page(while email is same and fname and lname is different)
-but the error message is showing when all fields are same(fname, lname and email)
-3)to dynamically send message to html page from views - javascript might be required.
 
-
-Purpose: To record an audio file and trigger an alert when
-amplitude goes above a certain threshold. Below requirements
-were installed.
+Additional Purpose: To record an audio file and trigger an alert when amplitude goes above a certain threshold. Below requirements were installed.
 
 $ sudo apt-get install portaudio19-dev
 $ sudo apt-get install python3-all-dev
