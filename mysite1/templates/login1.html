@@ -1,0 +1,14 @@
+
+{{msg1}}<br>
+<br>
+
+<form action="{% url 'login1' %}" method="POST">
+    {% csrf_token %}
+    
+    <label for="Email">Email:</label>
+    <input type="email" id="email" name="email" required ><br>
+    <input type="submit" value="Submit">
+</form> 
+
+{{msg2}}<br>
+<br>

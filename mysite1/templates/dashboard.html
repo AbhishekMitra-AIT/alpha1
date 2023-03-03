@@ -1,0 +1,39 @@
+
+
+{{msg2}}<br><br>
+
+
+email_id: {{msg3}}<button onclick="location.href='{% url 'record_audio' msg3 %} '">Record Audio</button><br><br>
+<button onclick="location.href='{%url 'logout' %}'"> logout</button>
+
+
+<br><br>
+{% for li in msg4 %}
+<table>
+    <tbody>
+    <thead>
+        <tr>
+            <td>ID</td>
+            <td>Email</td>
+            <td>Audio_File</td>
+            <td>Date_Time</td>
+            <td>Action</td>
+            
+        </tr>
+    </thead>
+    <tr>
+     <td>{{li.id}}</td>
+     <td>{{li.email}}</td>
+     <td>{{li.audio_file}}</td>
+     <td>{{li.current_date_time}}</td>
+     <td><button onclick="location.href='{% url 'play_audio' li.id %}'">Play Audio</button>
+    </tr>  
+    </tbody>
+</table>
+{% endfor %}
+
+<br>{{msg5}}<br>
+
+<!-- {% if user.is_authenticated %} -->
+
+<!-- {% endif %} -->
